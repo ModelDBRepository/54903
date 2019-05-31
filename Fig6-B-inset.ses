@@ -1,0 +1,659 @@
+load_file("nrngui.hoc")
+objectvar save_window_, rvp_
+objectvar scene_vector_[8]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+
+//Begin CellBuild[0]
+{
+load_file("celbild.hoc", "CellBuild")
+}
+{ocbox_ = new CellBuild(1)}
+{object_push(ocbox_)}
+{
+version(5.1)
+continuous = 1
+}
+{object_push(topol)}
+{
+first = 0
+slist.remove_all()
+sname = "HairBud"
+objref tobj
+}
+{
+tobj = new CellBuildSection("soma",0, 0, tobj, 0) slist.append(tobj)
+  tobj.position(260.3,281.3,260.3,281.3) tobj.lx=271.221 tobj.ly=292.076 tobj.i3d=2
+tobj = new CellBuildSection("soma",1, 0, tobj, 0.5) slist.append(tobj)
+tobj.parent=slist.object(0)
+  tobj.position(260.3,281.3,255,287.1) tobj.lx=259.425 tobj.ly=285.999 tobj.i3d=5
+tobj = new CellBuildSection("soma",2, 0, tobj, 0.5) slist.append(tobj)
+tobj.parent=slist.object(0)
+  tobj.position(260.3,281.3,265.6,275.7) tobj.lx=268.736 tobj.ly=285.02 tobj.i3d=5
+tobj = new CellBuildSection("funnel_C",0, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(1)
+  tobj.position(255,287.1,250.4,291.6) tobj.lx=252.7 tobj.ly=289.35 tobj.i3d=2
+tobj = new CellBuildSection("funnel_P",0, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(2)
+  tobj.position(265.6,275.7,267.1,273.3) tobj.lx=266.35 tobj.ly=274.5 tobj.i3d=2
+tobj = new CellBuildSection("InitSeg_C",0, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(3)
+  tobj.position(250.4,291.6,246.9,294.5) tobj.lx=248.65 tobj.ly=293.05 tobj.i3d=2
+tobj = new CellBuildSection("funnel_P",1, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(4)
+  tobj.position(267.1,273.3,267.2,271.9) tobj.lx=267.15 tobj.ly=272.6 tobj.i3d=2
+tobj = new CellBuildSection("InitSeg_C",1, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(5)
+  tobj.position(246.9,294.5,243,297.5) tobj.lx=244.95 tobj.ly=296 tobj.i3d=2
+tobj = new CellBuildSection("funnel_P",2, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(6)
+  tobj.position(267.2,271.9,267.1,269.6) tobj.lx=267.15 tobj.ly=270.75 tobj.i3d=2
+tobj = new CellBuildSection("InitSeg_C",2, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(7)
+  tobj.position(243,297.5,236.4,303.3) tobj.lx=239.7 tobj.ly=300.4 tobj.i3d=3
+tobj = new CellBuildSection("InitSeg_P",0, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(8)
+  tobj.position(267.1,269.6,264.8,265.8) tobj.lx=265.95 tobj.ly=267.7 tobj.i3d=3
+tobj = new CellBuildSection("Axon_C",0, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(9)
+  tobj.position(236.4,303.3,231.9,307.4) tobj.lx=226.981 tobj.ly=302.25 tobj.i3d=2
+tobj = new CellBuildSection("InitSeg_P",1, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(10)
+  tobj.position(264.8,265.8,263.2,260.9) tobj.lx=264 tobj.ly=263.35 tobj.i3d=2
+tobj = new CellBuildSection("Axon_C",1, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(11)
+  tobj.position(231.9,307.4,228.1,311.1) tobj.lx=224.4 tobj.ly=307.327 tobj.i3d=3
+tobj = new CellBuildSection("InitSeg_P",2, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(12)
+  tobj.position(263.2,260.9,259.3,255.4) tobj.lx=261.25 tobj.ly=258.15 tobj.i3d=2
+tobj = new CellBuildSection("Axon_C",2, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(13)
+  tobj.position(228.1,311.1,228.1,326.9) tobj.lx=228.1 tobj.ly=319 tobj.i3d=4
+tobj = new CellBuildSection("InitSeg_P",3, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(14)
+  tobj.position(259.3,255.4,257.8,250.8) tobj.lx=258.55 tobj.ly=253.1 tobj.i3d=2
+tobj = new CellBuildSection("Axon_C",3, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(15)
+  tobj.position(228.1,326.9,221.6,351.7) tobj.lx=224.85 tobj.ly=339.3 tobj.i3d=4
+tobj = new CellBuildSection("Axon_P",0, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(16)
+  tobj.position(257.8,250.8,255.9,236.2) tobj.lx=256.85 tobj.ly=243.5 tobj.i3d=3
+tobj = new CellBuildSection("Axon_C",4, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(17)
+  tobj.position(221.6,351.7,212.1,364.9) tobj.lx=216.85 tobj.ly=358.3 tobj.i3d=6
+tobj = new CellBuildSection("Axon_P",1, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(18)
+  tobj.position(255.9,236.2,254.2,220.9) tobj.lx=255.05 tobj.ly=228.55 tobj.i3d=3
+tobj = new CellBuildSection("Axon_C",5, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(19)
+  tobj.position(212.1,364.9,199.6,382.9) tobj.lx=205.85 tobj.ly=373.9 tobj.i3d=5
+tobj = new CellBuildSection("Axon_P",2, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(20)
+  tobj.position(254.2,220.9,246.3,195.3) tobj.lx=250.25 tobj.ly=208.1 tobj.i3d=7
+tobj = new CellBuildSection("Axon_C",6, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(21)
+  tobj.position(199.6,382.9,163.6,380.2) tobj.lx=181.6 tobj.ly=381.55 tobj.i3d=4
+tobj = new CellBuildSection("Axon_P",3, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(22)
+  tobj.position(246.3,195.3,249.3,168.7) tobj.lx=247.8 tobj.ly=182 tobj.i3d=6
+}
+{
+tobj = new CellBuildSection("Axon_C",7, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(23)
+  tobj.position(163.6,380.2,138.7,365.1) tobj.lx=151.15 tobj.ly=372.65 tobj.i3d=4
+tobj = new CellBuildSection("Axon_P",4, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(24)
+  tobj.position(249.3,168.7,247.6,141.6) tobj.lx=248.45 tobj.ly=155.15 tobj.i3d=4
+tobj = new CellBuildSection("Axon_C",8, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(25)
+  tobj.position(138.7,365.1,94.3,353.1) tobj.lx=116.5 tobj.ly=359.1 tobj.i3d=5
+tobj = new CellBuildSection("Axon_P",5, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(26)
+  tobj.position(247.6,141.6,254.6,114.1) tobj.lx=251.1 tobj.ly=127.85 tobj.i3d=6
+tobj = new CellBuildSection("Axon_C",9, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(27)
+  tobj.position(94.3,353.1,60.52,344.7) tobj.lx=77.41 tobj.ly=348.9 tobj.i3d=4
+tobj = new CellBuildSection("Axon_P",6, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(28)
+  tobj.position(254.6,114.1,255.8,94.57) tobj.lx=255.2 tobj.ly=104.335 tobj.i3d=6
+tobj = new CellBuildSection("Axon_C",10, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(29)
+  tobj.position(60.52,344.7,41.85,328.2) tobj.lx=51.185 tobj.ly=336.45 tobj.i3d=4
+tobj = new CellBuildSection("Receptor",0, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(30)
+  tobj.position(255.8,94.57,262.7,60.1) tobj.lx=259.25 tobj.ly=77.335 tobj.i3d=6
+tobj = new CellBuildSection("Axon_C",11, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(31)
+  tobj.position(41.85,328.2,28.08,309.6) tobj.lx=34.965 tobj.ly=318.9 tobj.i3d=4
+tobj = new CellBuildSection("Receptor",1, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(32)
+  tobj.position(262.7,60.1,248.4,39.8) tobj.lx=255.55 tobj.ly=49.95 tobj.i3d=5
+tobj = new CellBuildSection("Axon_C",12, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(33)
+  tobj.position(28.08,309.6,24.08,286.5) tobj.lx=26.08 tobj.ly=298.05 tobj.i3d=3
+tobj = new CellBuildSection("Receptor",2, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(34)
+  tobj.position(248.4,39.8,227.2,11.46) tobj.lx=237.8 tobj.ly=25.63 tobj.i3d=6
+tobj = new CellBuildSection("Axon_C",13, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(35)
+  tobj.position(24.08,286.5,25.41,273.1) tobj.lx=24.745 tobj.ly=279.8 tobj.i3d=2
+tobj = new CellBuildSection("Receptor",3, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(36)
+  tobj.position(227.2,11.46,177.5,12.88) tobj.lx=202.35 tobj.ly=12.17 tobj.i3d=6
+tobj = new CellBuildSection("Receptor",4, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(38)
+  tobj.position(177.5,12.88,135.8,23.21) tobj.lx=156.65 tobj.ly=18.045 tobj.i3d=4
+tobj = new CellBuildSection("Receptor",5, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(39)
+  tobj.position(135.8,23.21,97.15,41.39) tobj.lx=116.475 tobj.ly=32.3 tobj.i3d=2
+tobj = new CellBuildSection("Receptor",6, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(40)
+  tobj.position(97.15,41.39,78.94,47.65) tobj.lx=74.8759 tobj.ly=24.0775 tobj.i3d=4
+tobj = new CellBuildSection("Receptor",7, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(41)
+  tobj.position(78.94,47.65,57.95,61.75) tobj.lx=52.2762 tobj.ly=44.7119 tobj.i3d=3
+tobj = new CellBuildSection("Receptor",8, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(42)
+  tobj.position(57.95,61.75,51.69,68.18) tobj.lx=27.7113 tobj.ly=28.4991 tobj.i3d=2
+tobj = new CellBuildSection("HairBud",0, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(43)
+  tobj.position(51.69,68.18,55.25,73.08) tobj.lx=71.4368 tobj.ly=83.5244 tobj.i3d=2
+tobj = new CellBuildSection("Receptor",9, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(43)
+  tobj.position(51.69,68.18,47.89,71.79) tobj.lx=19.3593 tobj.ly=36.8512 tobj.i3d=2
+tobj = new CellBuildSection("HairBud",1, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(45)
+  tobj.position(47.89,71.79,50.24,76.14) tobj.lx=57.6805 tobj.ly=90.4026 tobj.i3d=2
+tobj = new CellBuildSection("Receptor",10, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(45)
+  tobj.position(47.89,71.79,38.84,77.85) tobj.lx=14.9376 tobj.ly=46.1858 tobj.i3d=2
+tobj = new CellBuildSection("HairBud",2, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(47)
+  tobj.position(38.84,77.85,40.12,81.08) tobj.lx=58.1718 tobj.ly=99.2459 tobj.i3d=2
+tobj = new CellBuildSection("Receptor",11, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(47)
+  tobj.position(38.84,77.85,33.66,80.97) tobj.lx=12.4811 tobj.ly=69.7681 tobj.i3d=2
+}
+{
+tobj = new CellBuildSection("HairBud",3, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(49)
+  tobj.position(33.66,80.97,33.77,84.47) tobj.lx=52.2762 tobj.ly=110.546 tobj.i3d=3
+tobj = new CellBuildSection("Receptor",12, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(49)
+  tobj.position(33.66,80.97,24.21,85.89) tobj.lx=-3.24037 tobj.ly=59.9421 tobj.i3d=2
+tobj = new CellBuildSection("Receptor",13, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(51)
+  tobj.position(24.21,85.89,16.26,94.37) tobj.lx=-15.0315 tobj.ly=77.1375 tobj.i3d=3
+tobj = new CellBuildSection("HairBud",4, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(52)
+  tobj.position(16.26,94.37,17.75,96.62) tobj.lx=41.4677 tobj.ly=122.828 tobj.i3d=3
+tobj = new CellBuildSection("HairBud",5, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(52)
+  tobj.position(16.26,94.37,13.61,101.3) tobj.lx=6.09428 tobj.ly=121.846 tobj.i3d=5
+all_init()
+}
+for i=0, slist.count-1 {slist.object(i).rdses()}
+260.3 281.3 0.9464 12.03
+260.3 281.3 0.9364 12.03
+260.3 281.3 0.9414 12.03
+258.1 283.6 0.9024 10.35
+256.7 285.3 0.9024 7.448
+255.7 286.4 0.9213 4.68
+255 287.1 0.9305 1.429
+260.3 281.3 0.9414 12.03
+262.2 279.3 0.9414 11.59
+264 277.5 0.9433 10.87
+264.8 276.5 0.8763 8.35
+265.6 275.7 0.8763 1.306
+255 287.1 0.9305 1.429
+250.4 291.6 0.883 1.115
+265.6 275.7 0.8763 1.306
+267.1 273.3 0.8763 0.9012
+250.4 291.6 0.883 1.115
+246.9 294.5 0.883 0.9744
+267.1 273.3 0.8763 0.9012
+267.2 271.9 0.8763 0.8972
+246.9 294.5 0.883 0.9744
+243 297.5 0.883 0.9974
+267.2 271.9 0.8763 0.8972
+267.1 269.6 0.7479 0.8972
+243 297.5 0.883 0.9974
+237.5 301.8 0.883 1.374
+236.4 303.3 0.7952 0.7918
+267.1 269.6 0.7479 0.8972
+266 267.8 0.5662 0.8972
+264.8 265.8 1.005 0.8744
+236.4 303.3 0.7952 0.7918
+231.9 307.4 0.7952 0.7548
+264.8 265.8 1.005 0.8744
+263.2 260.9 1.005 0.744
+231.9 307.4 0.7952 0.7548
+228.8 310 0.7952 0.9034
+228.1 311.1 0.6635 1.132
+263.2 260.9 1.005 0.744
+259.3 255.4 1.005 0.8178
+228.1 311.1 0.6635 1.132
+227.9 312.7 0.6635 0.8748
+228.3 325.6 0.6635 0.9232
+228.1 326.9 0.6635 0.841
+259.3 255.4 1.005 0.8178
+257.8 250.8 1.005 0.6996
+228.1 326.9 0.6635 0.841
+221.5 338.4 0.6635 0.769
+221.2 339.7 0.6635 0.6844
+221.6 351.7 0.5319 0.769
+257.8 250.8 1.005 0.6996
+256.6 243.2 1.005 0.8078
+255.9 236.2 1.005 0.7794
+221.6 351.7 0.5319 0.769
+221.2 353.2 0.4002 0.4442
+217.9 361.4 0.4002 0.487
+216.9 362.4 0.4002 0.4526
+212.7 364.6 0.4002 0.663
+212.1 364.9 0.4002 0.7144
+255.9 236.2 1.005 0.7794
+254.2 229.5 1.005 0.7736
+254.2 220.9 1.005 0.7316
+212.1 364.9 0.4002 0.7144
+211.9 365.8 0.4002 0.5904
+210.4 371.5 0.4002 0.7856
+202.8 380.3 0.2685 0.6774
+199.6 382.9 0.0051744 0.6378
+254.2 220.9 1.005 0.7316
+253.2 218.5 1.005 0.5924
+252.1 213.5 1.005 0.4216
+250.3 206.3 1.005 0.7128
+247.6 205.2 1.005 0.6052
+246.6 202.7 1.005 0.4522
+246.3 195.3 1.005 0.5496
+199.6 382.9 0.0051744 0.6378
+189.4 384.7 0.0051936 0.571
+176.5 384.2 0.0052164 0.3714
+163.6 380.2 0.0052373 0.5394
+246.3 195.3 1.005 0.5496
+248.7 191 1.005 0.479
+248.9 187.3 1.005 0.4652
+248.3 184 1.005 0.5534
+248.6 176.2 1.005 0.4586
+249.3 168.7 1.005 0.4804
+163.6 380.2 0.0052373 0.5394
+158.7 376.2 0.005244 0.2996
+150.7 370.5 0.0052553 0.6496
+138.7 365.1 0.0052739 0.6376
+249.3 168.7 1.005 0.4804
+248.2 166.1 1.005 0.473
+247.1 153.7 1.005 0.5604
+247.6 141.6 1.005 0.4652
+138.7 365.1 0.0052739 0.6376
+129 363.8 0.0052907 0.473
+117.4 359.4 0.005309 0.5428
+103.6 357.1 0.0053325 0.4684
+94.3 353.1 0.0053471 0.4944
+247.6 141.6 1.005 0.4652
+249.5 139 1.005 0.6386
+252.6 130.4 1.005 0.4472
+255.9 128.4 1.005 0.3822
+256.9 123.6 1.005 0.4072
+254.6 114.1 1.005 0.4196
+94.3 353.1 0.0053471 0.4944
+81.41 351.4 0.0053692 0.4214
+69.41 346.5 0.0053881 0.6322
+60.52 344.7 0.0054031 0.6042
+254.6 114.1 1.005 0.4196
+256 109.1 1.005 0.4284
+257.3 107.2 1.005 0.2836
+257.6 101.1 1.005 0.365
+257.1 97.25 1.005 0.4112
+255.8 94.57 1.005 0.5288
+60.52 344.7 0.0054031 0.6042
+54.3 338 0.0054107 0.5894
+47.19 331.4 0.0054199 0.5886
+41.85 328.2 0.0054278 0.697
+255.8 94.57 1.005 0.5288
+256.5 90.07 1.005 0.466
+266.6 70.53 1.005 0.4912
+266.8 66.42 1.005 0.5382
+263 63.58 1.005 0.4838
+262.7 60.1 1.005 0.3672
+41.85 328.2 0.0054278 0.697
+39.19 325.6 0.0054312 0.633
+36.96 320.2 0.0054323 0.5552
+28.08 309.6 0.0054426 0.5114
+262.7 60.1 1.005 0.3672
+260.4 57.48 1.005 0.48
+258.7 53.91 1.005 0.5774
+257.3 52.65 1.005 0.6016
+248.4 39.8 1.005 0.454
+28.08 309.6 0.0054426 0.5114
+25.41 297.1 0.0054408 0.5186
+24.08 286.5 0.0054376 0.4676
+248.4 39.8 1.005 0.454
+241.6 23.81 1.005 0.4574
+240.1 20.86 1.005 0.445
+237.3 17.65 1.005 0.66
+233.2 13.94 1.005 0.86
+227.2 11.46 1.005 0.84
+24.08 286.5 0.0054376 0.4676
+25.41 273.1 0.00542819 0.5404
+227.2 11.46 1.005 0.84
+221.8 10.7 1.005 0.8698
+216.2 10.7 1.005 0.8596
+205.4 9.17 1.005 0.7012
+193.1 10.5 1.005 0.78
+177.5 12.88 1.005 0.798
+177.5 12.88 1.005 0.798
+164.1 15.99 1.005 0.86
+153 18.44 1.005 0.88
+135.8 23.21 1.005 0.7382
+135.8 23.21 1.005 0.7382
+97.15 41.39 1.005 0.88
+97.15 41.39 1.005 0.88
+95 41.82 1.005 0.76
+88.41 43.81 1.005 0.78
+78.94 47.65 1.005 1.02
+78.94 47.65 1.005 1.02
+67.98 54.07 1.005 0.86
+57.95 61.75 1.005 0.7
+57.95 61.75 1.005 0.7
+51.69 68.18 1.005 0.89
+51.69 68.18 1.005 0.89
+55.25 73.08 0.998 1.515
+51.69 68.18 1.005 0.89
+47.89 71.79 1.005 0.84
+47.89 71.79 1.005 0.84
+50.24 76.14 0.998 1.702
+47.89 71.79 1.005 0.84
+38.84 77.85 1.005 0.81
+38.84 77.85 1.005 0.81
+40.12 81.08 0.998 1.218
+38.84 77.85 1.005 0.81
+33.66 80.97 1.005 0.86
+33.66 80.97 1.005 0.86
+34.04 81.36 1.005 1.62
+33.77 84.47 1.005 1.32
+33.66 80.97 1.005 0.86
+24.21 85.89 1.005 0.62
+24.21 85.89 1.005 0.62
+19.57 90.23 1.005 0.76
+16.26 94.37 1.005 0.99
+16.26 94.37 1.005 0.99
+16.69 94.8 1.005 1.18
+17.75 96.62 1.005 1.9
+16.26 94.37 1.005 0.99
+13.44 96.62 1.005 0.72
+12.98 99.07 1.005 1.98
+13.41 100.3 1.005 3.04
+13.61 101.3 1.005 1.36
+{object_pop()}
+{
+}
+{object_push(subsets)}
+{first = 0}
+{tobj = new SNList("SOMA_JUNCTIONs") snlist.append(tobj)}
+for i=0,6 tobj.add(bild.topol.slist.object(fscan()))
+0
+1
+2
+3
+4
+6
+8
+{tobj = new SNList("INIT_SEG_PER") snlist.append(tobj)}
+for i=0,2 tobj.add(bild.topol.slist.object(fscan()))
+12
+14
+16
+{tobj = new SNList("INIT_SEG_CENT") snlist.append(tobj)}
+for i=0,2 tobj.add(bild.topol.slist.object(fscan()))
+5
+7
+9
+{tobj = new SNList("AXONS") snlist.append(tobj)}
+for i=0,20 tobj.add(bild.topol.slist.object(fscan()))
+11
+13
+15
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+33
+35
+37
+{tobj = new SNList("REC_NEU_BUDS") snlist.append(tobj)}
+for i=0,19 tobj.add(bild.topol.slist.object(fscan()))
+32
+34
+36
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+{consist()}
+{object_pop()}
+{
+}
+{object_push(geom)}
+{
+first = 0
+tobj = new GeoSpec(4)
+tobj.value = 1
+bild.subsets.snlist.object(1).geo.append(tobj)
+tobj = new GeoSpec(4)
+tobj.value = 3
+bild.subsets.snlist.object(2).geo.append(tobj)
+tobj = new GeoSpec(4)
+tobj.value = 3
+bild.subsets.snlist.object(3).geo.append(tobj)
+tobj = new GeoSpec(4)
+tobj.value = 5
+bild.subsets.snlist.object(4).geo.append(tobj)
+tobj = new GeoSpec(4)
+tobj.value = 3
+bild.subsets.snlist.object(5).geo.append(tobj)
+set_default()
+}
+{object_pop()}
+{
+}
+{object_push(memb)}
+{first=0}
+{
+tobj = new GeoSpec(0)
+tobj.value = 70
+tobj.set_default()
+tobj = new MStanWrap(tobj, 0)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new GeoSpec(1)
+tobj.value = 1
+tobj.set_default()
+tobj = new MStanWrap(tobj, 0)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("pas")
+tobj.set("g_pas", 2e-05, 0)
+tobj.set("e_pas", -70, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("km")
+tobj.set("gbar_km", 70, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("kv")
+tobj.set("gbar_kv", 60, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("na")
+tobj.set("gbar_na", 0, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{object_pop()}
+{
+}
+{object_push(manage)}
+{
+first = 0
+classname = "Cell"
+etop=1 esub=1 egeom=1 emem=1
+itop=1 isub=0 igeom=0 imem=0
+bild.topol.names_off = 0
+bild.topol.circles_off = 1
+output_index = 0  output_x = 1
+}
+{object_pop()}
+{
+cexport()
+}
+{object_pop()}
+{
+save_window_=ocbox_.gtopol
+save_window_.size(-222.272,532.272,-40,440)
+scene_vector_[2] = save_window_
+ocbox_.gtopol = save_window_
+save_window_.save_name("ocbox_.gtopol")
+}
+{
+ocbox_.map("CellBuild[0]", -625, 646, 919.8, 819)
+}
+objref ocbox_
+//End CellBuild[0]
+
+
+//Begin PointProcessManager
+{
+load_file("pointman.hoc")
+}
+{
+HairBud[1] ocbox_ = new PointProcessManager(0)
+}
+{object_push(ocbox_)}
+{
+mt.select("AlphaSynapse") i = mt.selected()
+ms[i] = new MechanismStandard("AlphaSynapse")
+ms[i].set("onset", 50, 0)
+ms[i].set("tau", 5, 0)
+ms[i].set("gmax", 0.004, 0)
+ms[i].set("e", 0, 0)
+mt.select("AlphaSynapse") i = mt.selected() maction(i)
+hoc_ac_ = 0.5
+sec.sec move() d1.flip_to(0)
+}
+{object_pop() doNotify()}
+{
+ocbox_ = ocbox_.v1
+ocbox_.map("PointProcessManager", 300, 127, 222.3, 384.3)
+}
+objref ocbox_
+//End PointProcessManager
+
+{
+xpanel("forall Ra=global_ra", 0)
+global_ra = 70
+xvalue("global Ra","global_ra", 1,"set_ra()", 1, 1 )
+xpanel(716,1)
+}
+{
+xpanel("Temperature", 0)
+celsius = 30
+xvalue("celsius","celsius", 1,"", 0, 1 )
+xpanel(447,1)
+}
+{
+xpanel("RunControl", 0)
+v_init = -76
+xvalue("Init","v_init", 1,"stdinit()", 1, 1 )
+xbutton("Init & Run","run()")
+xbutton("Stop","stoprun=1")
+runStopAt = 5
+xvalue("Continue til","runStopAt", 1,"{continuerun(runStopAt) stoprun=1}", 1, 1 )
+runStopIn = 1
+xvalue("Continue for","runStopIn", 1,"{continuerun(t + runStopIn) stoprun=1}", 1, 1 )
+xbutton("Single Step","steprun()")
+t = 200
+xvalue("t","t", 2 )
+tstop = 200
+xvalue("Tstop","tstop", 1,"tstop_changed()", 0, 1 )
+dt = 0.025
+xvalue("dt","dt", 1,"setdt()", 0, 1 )
+steps_per_ms = 40
+xvalue("Points plotted/ms","steps_per_ms", 1,"setdt()", 0, 1 )
+xcheckbox("Quiet",&stdrun_quiet,"")
+realtime = 3
+xvalue("Real Time","realtime", 0,"", 0, 1 )
+xpanel(3,104)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(40,90,-80,40)
+scene_vector_[4] = save_window_
+{save_window_.view(40, -80, 50, 120, 1038, 20, 300.6, 331.3)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addvar("soma[1].v( 0.5 )", 1, 1, 0.716168, 0.90815, 2)
+save_window_.addexpr("Receptor[5].v( 0.5 )", 2, 1, 0.662275, 1.00595, 2)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(40,90,-80,40)
+scene_vector_[5] = save_window_
+{save_window_.view(40, -80, 50, 120, 1044, 547, 300.6, 329.5)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addvar("Axon_P[2].v( 0.1 )", 1, 1, 0.701198, 0.965554, 2)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(48,68,-80,40)
+scene_vector_[6] = save_window_
+{save_window_.view(48, -80, 20, 120, 602, 120, 300.6, 331.3)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addexpr("Receptor[5].v( 0.5 )", 2, 1, 0.674251, 0.99508, 2)
+save_window_.addvar("soma[1].v( 0.5 )", 1, 1, 0.728144, 0.967914, 2)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,200,-80,40)
+scene_vector_[7] = save_window_
+{save_window_.view(0, -80, 200, 120, 608, 640, 300.6, 330.4)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addexpr("Axon_C[11].v( 0.5 )", 3, 2, 0.659281, 1.00351, 2)
+}
+objectvar scene_vector_[1]
+{doNotify()}
