@@ -38,9 +38,7 @@ To run the model described in *Hossain et al., 2005*:
 13. Action potential (AP) now fails to invade the cell body. The only difference between this and previous trial is the removal of 1 pS/µm² from both initial segments.
 14. To create the graph in Figure 7, panel C you need to find the "lower limits of the sensitive range" using four different channel mechanisms. Each bar in the histogram is represented by a session file starting with *Fig7C-*. If you load any of the session files starting with *Fig7C-* and then decrease the sodium conductance by only 1 pS/µm² from any initial segment, the AP would fail to invade the cell body. Note that the session "Fig7C-hh-black_bar.ses" is missing. This session file is identical to "Fig7A.ses", and therefore is omitted from the download.
 
-&nbsp;
-
->>the end<<
+the end
 
 ---
 
